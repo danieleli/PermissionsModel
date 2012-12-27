@@ -40,6 +40,7 @@
       <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Data" />
   </ItemGroup>
   <Choose>
     <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
@@ -54,7 +55,8 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="Factory.cs" />
+    <Compile Include="AppRepoTest.cs" />
+    <Compile Include="TestFactory.cs" />
     <Compile Include="PermissionsTest.cs" />
     <Compile Include="LegacyTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

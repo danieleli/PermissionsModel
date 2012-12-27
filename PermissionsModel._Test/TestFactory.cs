@@ -7,7 +7,7 @@ using PermissionsModel.Models;
 
 namespace PermissionsModel._Test
 {
-    public static class Factory
+    public static class TestFactory
     {
         public static App AddApp(PermissionContext db)
         {
@@ -23,6 +23,31 @@ namespace PermissionsModel._Test
             db.Merchants.Add(merch1);
             db.SaveChanges();
             return db.Merchants.First();
+        }
+
+        public static Merchant AddMerchant()
+        {
+         using (var db = new PermissionContext())
+         {
+             return AddMerchant(db);
+         }
+        }
+
+
+        public static Developer AddDeveloper(PermissionContext db)
+        {
+            var dev = new Developer { Name = "Dev 1" };
+            db.Developers.Add(dev);
+            db.SaveChanges();
+            return db.Developers.First();
+        }
+
+        public static Developer AddDeveloper()
+        {
+            using (var db = new PermissionContext())
+            {
+                return AddDeveloper(db);
+            }
         }
     }
 }

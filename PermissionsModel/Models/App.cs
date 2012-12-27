@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Data.Entity;
 using System.Linq;
 using System.Text;
@@ -27,7 +28,13 @@ namespace PermissionsModel.Models
 
     public class App : BaseModel
     {
+        public App()
+        {
+            this.Developers = new List<Developer>();
+        }
+        [Required]
         public string ClientKey { get; set; }
+        [Required]
         public string ClientSecret { get; set; }
         public int? MerchantId { get; set; }
         public virtual Merchant Merchant { get; set; }

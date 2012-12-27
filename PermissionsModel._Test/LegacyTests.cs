@@ -22,8 +22,8 @@ namespace PermissionsModel._Test
             int appId = 0;
             using (var db = new PermissionContext())
             {
-                merchId = Factory.AddMerchant(db).Id;
-                var app1 = Factory.AddApp(db);
+                merchId = TestFactory.AddMerchant(db).Id;
+                var app1 = TestFactory.AddApp(db);
                 appId = app1.Id;
                 app1.MerchantId = merchId;
                 db.SaveChanges();

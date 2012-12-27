@@ -19,16 +19,17 @@ namespace PermissionsModel._Test
                 ClearTable(db.ResourceOwners, db);
                 ClearTable(db.Apps, db);
                 ClearTable(db.Merchants, db);
+                ClearTable(db.Developers, db);
             }
 
             using (var db = new PermissionContext())
             {
                 Assert.AreEqual(0, db.OwnerApps.Count(), "OwnerApps");
-                Assert.AreEqual(0, db.Apps.Count(), "OwnerApps");
-                Assert.AreEqual(0, db.Developers.Count(), "OwnerApps");
-                Assert.AreEqual(0, db.Merchants.Count(), "OwnerApps");
+                Assert.AreEqual(0, db.Apps.Count(), "Apps");
+                Assert.AreEqual(0, db.Developers.Count(), "Developers");
+                Assert.AreEqual(0, db.Merchants.Count(), "Merchants");
                 Assert.AreEqual(0, db.OwnerApps.Count(), "OwnerApps");
-                Assert.AreEqual(0, db.ResourceOwners.Count(), "OwnerApps");
+                Assert.AreEqual(0, db.ResourceOwners.Count(), "ResourceOwners");
             }
         }
 
